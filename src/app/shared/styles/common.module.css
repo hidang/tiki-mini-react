@@ -1,0 +1,8 @@
+.skipNavigationBar {
+  /* 56px is the height of the navigation bar */
+  padding-top: 56px;
+}
+
+.grayBackground {
+  background: #eef1f8;
+}

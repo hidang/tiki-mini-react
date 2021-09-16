@@ -1,16 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-/**
-Include Tailwind utilities
- */
-/* @tailwind utilities; */
 
 :root {
-  --color-white: #ffffff;
-  --color-black: #333c44;
+  --color-primary: #1a94ff;
+  --color-inactive: #808089;
+  --color-text-primary: #28282b;
+  --color-text-secondary: #27272a;
 
-  --color-primary: var(--color-brand-02);
+  --color-white: #ffffff;
+  --color-orange: #fc820a;
+  --color-red: #ff424f;
+  --color-gray-20: #ebebf0;
 
   --font-sans: 'Inter', sans-serif;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
 }
 
 body {
@@ -24,8 +27,9 @@ body {
 
 html {
   font-family: var(--font-sans);
-  color: var(--color-black);
-  line-height: 24px;
+  font-weight: var(--font-weight-normal);
+  color: var(--color-text-primary);
+  line-height: 20px;
 }
 
 a {
