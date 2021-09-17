@@ -10,9 +10,13 @@
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   position: absolute;
   height: 100%;
   width: 100%;
 
-  background-color: #f6f5fa;
+  background: #f6f5fa;
 }
