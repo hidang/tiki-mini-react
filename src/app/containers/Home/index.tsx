@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavigationBar } from '../../components/NavigationBar';
-import { Banner } from './Banner';
+import { Banner } from './components/Banner';
 import s from './home.module.css';
 import common from '../../shared/styles/common.module.css';
 

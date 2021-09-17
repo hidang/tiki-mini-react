@@ -1,9 +1,0 @@
-.slider {
-  overflow-x: hidden;
-}
-.slider > div {
-  overflow-x: scroll;
-}
-.slider > div::-webkit-scrollbar {
-  display: none;
-}

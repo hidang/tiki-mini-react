@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    "baseUrl": "./src",
+    "paths": {
+      "@core-ui/*": ["core-ui/*"],
+      "@apis/*": ["apis/*"],
+      "@app/*": ["app/*"]
+    },
     "target": "es5",
     "lib": [
       "dom",
