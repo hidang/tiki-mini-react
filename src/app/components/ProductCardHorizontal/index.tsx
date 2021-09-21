@@ -1,32 +1,37 @@
 import { Book } from '@models/Book';
 import { Product } from '@models/Cart';
 import { addToCart } from '@store/cart/actions';
-import { selectCart } from '@store/cart/selectors';
-import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React, { CSSProperties } from 'react';
+import { useDispatch } from 'react-redux';
 import { StartRating } from '../StartRating';
 import s from './productCard.module.css';
 import TikiNow from '@app/assets/icons/TikiNow.svg';
 import { toVNDString } from '@app/shared/utils/price';
 import { Label } from '@core-ui/Label';
 
-export interface ProductCardVerticalProps {
+export interface ProductCardHorizontalProps {
   book: Book;
+  style?: CSSProperties;
+  className?: string;
 }
 
-export const ProductCardVertical: React.FC<ProductCardVerticalProps> = ({
-  book
+export const ProductCardHorizontal: React.FC<ProductCardHorizontalProps> = ({
+  book,
+  style,
+  className
 }) => {
-  const productList = useSelector(selectCart);
   const dispatch = useDispatch();
   const dispatchSetCart = (item: Product) => {
-    console.log(productList);
     dispatch(addToCart(item));
   };
 
   return (
-    <div className={s.cardContainer} onClick={() => dispatchSetCart(book)}>
-      <img className={s.thumbnail} src={book.thumbnail_url} alt={book.name} />
+    <div
+      className={[s.cardContainer, className].join(' ')}
+      onClick={() => dispatchSetCart(book)}
+      style={style}
+    >
+      <img className={s.thumbnail} src={book.thumbnail_url} />
       <div className={s.content}>
         {book.badges.find((b: any) => b.code == 'tikinow') && (
           <img src={TikiNow} width="56px" alt="titkiNow" />

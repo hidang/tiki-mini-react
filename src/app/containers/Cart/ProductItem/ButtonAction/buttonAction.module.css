@@ -1,0 +1,30 @@
+.container {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+
+  font-size: 16px;
+  line-height: 40px;
+  color: var(--color-inactive);
+
+  background: var(--color-white);
+  border: 1px solid #dddde3;
+  border-radius: 4px;
+}
+
+.active {
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  cursor: pointer;
+}
+
+.active > img {
+  filter: invert(1) sepia(1) saturate(5) hue-rotate(175deg);
+}
+
+.disable {
+  border: 1px solid #ededef;
+  color: #ededef;
+}

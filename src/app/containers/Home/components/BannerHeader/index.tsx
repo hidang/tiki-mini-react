@@ -7,6 +7,7 @@ import { api } from '@apis/index';
 import { Banner } from '@models/Banner';
 
 const settingSliders = {
+  arrows: false,
   speed: 1000,
   slidesToShow: 1,
   slidesToScroll: 1,
@@ -25,7 +26,7 @@ export const BannerHeader: React.FC = () => {
   return (
     <div>
       <Slider className={s.slider} {...settingSliders}>
-        {banners?.map((banner: any, index: number) => (
+        {banners?.map((banner, index) => (
           <img
             src={banner.mobile_url}
             key={`banner-${index}`}

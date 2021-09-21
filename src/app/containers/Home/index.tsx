@@ -6,6 +6,8 @@ import s from './home.module.css';
 import { UniqueSale } from './components/UniqueSale';
 import { api } from '@apis/index';
 import { Book } from '@models/Book';
+import { SuperSale } from './components/SuperSale';
+import { FlashSale } from './components/FlashSale';
 
 export const Home: React.FC = () => {
   const [bookSales, setBookSales] = useState<Book[]>([]);
@@ -18,10 +20,12 @@ export const Home: React.FC = () => {
 
   return (
     <div>
-      <NavigationBar style={{ backgroundColor: '#C7E9F9' }} />
+      <NavigationBar style={{ backgroundColor: '#FCF4DD' }} />
       <div className={[common.skipNavigationBottom, s.container].join(' ')}>
         <BannerHeader />
         <UniqueSale bookSales={bookSales} />
+        <SuperSale bookSales={bookSales} />
+        <FlashSale />
       </div>
     </div>
   );

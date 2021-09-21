@@ -1,0 +1,17 @@
+.label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 4px;
+  width: 40px;
+  height: 24px;
+
+  background: var(--color-red);
+  padding: 4px;
+
+  font-size: 12px;
+  line-height: 24px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-white);
+}

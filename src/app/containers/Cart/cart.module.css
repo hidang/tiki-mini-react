@@ -1,4 +1,4 @@
-.titleHeader {
+.header {
   margin: 16px 16px;
 
   font-style: normal;
@@ -12,11 +12,47 @@
 .container {
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   position: absolute;
   height: 100%;
   width: 100%;
 
   background: #f6f5fa;
+}
+
+.title {
+  font-size: 16px;
+  line-height: 24px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-text-secondary);
+  padding: 8px 16px;
+}
+
+.orderCard {
+  margin: 0 16px;
+  padding: 16px;
+
+  background: var(--color-white);
+  border-radius: 8px;
+}
+
+.lineX {
+  border-bottom: 1px solid #ebebf0;
+  margin-top: 16px;
+  margin-bottom: 8px;
+}
+
+.labelValue {
+  display: flex;
+  justify-content: space-between;
+}
+
+.label ~ .value {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+.value {
+  font-weight: var(--font-weight-bold);
 }

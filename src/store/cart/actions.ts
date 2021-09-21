@@ -11,6 +11,16 @@ export const addToCart = (product: Partial<CartState>): CartActionTypes => ({
   payload: product
 });
 
+export const removeToCart = (product: Partial<CartState>): CartActionTypes => ({
+  type: CartAction.REMOVE_CART,
+  payload: product
+});
+
+export const deleteToCart = (product: Partial<CartState>): CartActionTypes => ({
+  type: CartAction.DELETE_CART,
+  payload: product
+});
+
 export const clearCart = (): CartActionTypes => ({
   type: CartAction.CLEAR_CART
 });
