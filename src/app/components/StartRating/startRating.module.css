@@ -1,0 +1,14 @@
+.wrap {
+  display: inline-block;
+  position: relative;
+  width: 48px;
+  height: 8px;
+}
+
+.starEmpty {
+  fill: var(--color-gray-40);
+}
+
+.rectFilled {
+  fill: var(--color-yellow);
+}

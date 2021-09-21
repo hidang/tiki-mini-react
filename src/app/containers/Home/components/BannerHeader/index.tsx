@@ -4,18 +4,19 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import s from './banner.module.css';
 import { api } from '@apis/index';
+import { Banner } from '@models/Banner';
 
 const settingSliders = {
-  speed: 500,
+  speed: 1000,
   slidesToShow: 1,
   slidesToScroll: 1,
-  autoplaySpeed: 2000,
+  autoplaySpeed: 2500,
   autoplay: true,
   swipeToSlide: true
 };
 
-export const Banner: React.FC = () => {
-  const [banners, setBannsers] = useState<any>(); // FIXME: type: <any> just for demo | waiting api decription
+export const BannerHeader: React.FC = () => {
+  const [banners, setBannsers] = useState<Banner[]>([]);
 
   useEffect(() => {
     api.getBannersHome().then(setBannsers);
@@ -25,7 +26,11 @@ export const Banner: React.FC = () => {
     <div>
       <Slider className={s.slider} {...settingSliders}>
         {banners?.map((banner: any, index: number) => (
-          <img src={banner.mobile_url} key={`banner-${index}`}></img>
+          <img
+            src={banner.mobile_url}
+            key={`banner-${index}`}
+            onClick={() => window.open(banner.url, '_blank')?.focus}
+          />
         ))}
       </Slider>
     </div>
