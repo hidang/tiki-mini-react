@@ -24,12 +24,13 @@ yarn install
 yarn run start
 ```
 
-Open [http://localhost:3000](http://localhost:3001) to view it in the browser.
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ---
 
 <div align="center">
 
-[github/hidang](https://github.com/hidang)
+[Github/hidang](https://github.com/hidang)
+[Linkedin (Do Khanh Dang)](https://www.linkedin.com/in/dangdodev)
 
 </div>
