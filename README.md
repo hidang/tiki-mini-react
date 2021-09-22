@@ -30,7 +30,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 <div align="center">
 
-[Github/hidang](https://github.com/hidang)
-[Linkedin (Do Khanh Dang)](https://www.linkedin.com/in/dangdodev)
+[Github/hidang](https://github.com/hidang) | [Linkedin (Do Khanh Dang)](https://www.linkedin.com/in/dangdodev)
 
 </div>
