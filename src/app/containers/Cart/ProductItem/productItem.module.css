@@ -20,3 +20,31 @@
   border-radius: 12px;
   cursor: pointer;
 }
+
+.name {
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--color-text-primary);
+}
+
+.priceRow {
+  display: flex;
+  align-items: center;
+  margin: 4px 0 12px 0;
+}
+
+.price {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: var(--font-weight-bold);
+  color: var(--color-primary);
+}
+
+.originalPrice {
+  margin-left: 4px;
+  font-size: 10px;
+  line-height: 12px;
+  text-decoration-line: line-through;
+
+  color: var(--color-inactive);
+}

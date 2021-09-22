@@ -1,9 +1,8 @@
 import { Book } from '@models/Book';
 import { Product } from '@models/Cart';
 import { addToCart } from '@store/cart/actions';
-import { selectCart } from '@store/cart/selectors';
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { StartRating } from '../StartRating';
 import s from './productCard.module.css';
 import TikiNow from '@app/assets/icons/TikiNow.svg';
@@ -17,10 +16,8 @@ export interface ProductCardVerticalProps {
 export const ProductCardVertical: React.FC<ProductCardVerticalProps> = ({
   book
 }) => {
-  const productList = useSelector(selectCart);
   const dispatch = useDispatch();
   const dispatchSetCart = (item: Product) => {
-    console.log(productList);
     dispatch(addToCart(item));
   };
 

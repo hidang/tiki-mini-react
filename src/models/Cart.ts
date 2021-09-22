@@ -2,5 +2,5 @@
 export type Product = any;
 
 export interface CartState {
-  products?: Product[];
+  products: Product[];
 }

@@ -30,10 +30,15 @@
 
 .orderCard {
   margin: 0 16px;
+  margin-bottom: 160px;
   padding: 16px;
 
   background: var(--color-white);
   border-radius: 8px;
+  overflow: scroll;
+}
+.orderCard::-webkit-scrollbar {
+  display: none;
 }
 
 .lineX {

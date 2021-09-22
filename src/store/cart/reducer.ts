@@ -1,4 +1,4 @@
-import { CartState } from '@models/Cart';
+import { CartState, Product } from '@models/Cart';
 import { Reducer } from 'react';
 import { CartAction, CartActionTypes } from '@store/cart/types';
 
@@ -17,50 +17,54 @@ export const cartReducer: Reducer<CartState, CartActionTypes> = (
         ...action.payload
       };
     case CartAction.ADD_CART: {
-      let _indexProduct: number = prevState.products
-        ? prevState.products?.findIndex((p) => p.id == action.payload.id)
+      let _products: Product[] = prevState.products;
+      let _indexProduct: number = _products
+        ? _products?.findIndex((p) => p.id == action.payload.id)
         : -1;
-      if (prevState.products == [] || _indexProduct == -1) {
+      if (_products == [] || _indexProduct == -1) {
         action.payload.quantity_in_cart = 1;
-        prevState.products?.push(action.payload);
+        _products?.push(action.payload);
       } else {
-        prevState.products &&
-          _indexProduct >= 0 &&
-          prevState.products[_indexProduct].quantity_in_cart + 1 <=
-            prevState.products[_indexProduct].stock_item?.max_sale_qty &&
-          ++prevState.products[_indexProduct].quantity_in_cart;
+        _indexProduct >= 0 &&
+          _products[_indexProduct].quantity_in_cart + 1 <=
+            _products[_indexProduct].stock_item?.max_sale_qty &&
+          ++_products[_indexProduct].quantity_in_cart;
       }
+      prevState.products = [..._products];
       return {
         ...prevState
       };
     }
     case CartAction.REMOVE_CART: {
-      let _indexProduct: number = prevState.products
-        ? prevState.products?.findIndex((p) => p.id == action.payload.id)
+      let _products: Product[] = prevState.products;
+      let _indexProduct: number = _products
+        ? _products?.findIndex((p) => p.id == action.payload.id)
         : -1;
-      if (prevState.products != [] || _indexProduct != -1) {
-        prevState.products &&
-          prevState.products[_indexProduct].quantity_in_cart - 1 <=
-            prevState.products[_indexProduct].stock_item?.min_sale_qty &&
-          --prevState.products[_indexProduct].quantity_in_cart;
+      if (_products != [] || _indexProduct != -1) {
+        _products[_indexProduct].quantity_in_cart - 1 >=
+          _products[_indexProduct].stock_item?.min_sale_qty &&
+          --_products[_indexProduct].quantity_in_cart;
       }
+      prevState.products = [..._products];
       return {
         ...prevState
       };
     }
     case CartAction.DELETE_CART: {
-      let _indexProduct: number = prevState.products
-        ? prevState.products?.findIndex((p) => p.id == action.payload.id)
+      let _products: Product[] = prevState.products;
+      let _indexProduct: number = _products
+        ? _products?.findIndex((p) => p.id == action.payload.id)
         : -1;
-      if (prevState.products != [] || _indexProduct != -1) {
-        prevState.products?.splice(_indexProduct, 1);
+      if (_products != [] || _indexProduct != -1) {
+        _products?.splice(_indexProduct, 1);
       }
+      prevState.products = [..._products];
       return {
         ...prevState
       };
     }
     case CartAction.CLEAR_CART:
-      prevState.products = [];
+      prevState.products = [...[]];
       return { ...prevState };
     default:
       return prevState;

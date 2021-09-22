@@ -4,7 +4,9 @@ import s from './buttonAction.module.css';
 
 export interface ButtonActionProps {
   children?: React.ReactNode;
-  state?: 'active' | 'disable';
+  state?: 'active' | 'inactive';
+
+  onClick?: React.MouseEventHandler;
 
   style?: CSSProperties;
   className?: string;
@@ -13,14 +15,18 @@ export interface ButtonActionProps {
 export const ButtonAction: React.FC<ButtonActionProps> = ({
   children,
   state,
-  style
+  onClick,
+  style,
+  className
 }) => {
   return (
     <div
       style={style}
+      onClick={onClick}
       className={classname(
         s.container,
-        state === 'active' ? s.active : state === 'disable' && s.disable
+        state === 'active' ? s.active : state === 'inactive' && s.inactive,
+        className
       )}
     >
       {children}
